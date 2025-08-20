@@ -179,6 +179,12 @@ forgotPasswordLink.addEventListener('click', (e) => {
     e.preventDefault();
     window.electronAPI.navigateToForgotPassword();
 });
+// Add to existing event listeners in each page
+const backToWelcome = () => {
+    window.electronAPI.navigateToWelcome();
+};
+
+// Optional: Add a "Back to Welcome" button or link in your existing pages
 
 // Add CSS for input focus states
 const style = document.createElement('style');

@@ -6,23 +6,23 @@ let mainWindow;
 function createWindow() {
     // Create the browser window
     mainWindow = new BrowserWindow({
-        width: 1200,
-        height: 800,
-        minWidth: 900,
-        minHeight: 600,
+        width: 1400,
+        height: 900,
+        minWidth: 1000,
+        minHeight: 700,
         webPreferences: {
             nodeIntegration: false,
             contextIsolation: true,
             preload: path.join(__dirname, 'preload.js')
         },
         titleBarStyle: 'hiddenInset', // Modern look
-        backgroundColor: '#1a1a1a',
+        backgroundColor: '#0a0a1a',
         show: false, // Don't show until ready
         icon: path.join(__dirname, 'src/assets/icon.png')
     });
 
     // Load the login page
-    mainWindow.loadFile('src/index.html');
+    mainWindow.loadFile('src/welcome.html');
 
     // Show window when ready to prevent visual flash
     mainWindow.once('ready-to-show', () => {
@@ -63,6 +63,9 @@ app.on('window-all-closed', () => {
 
 ipcMain.handle('navigate-to-signup', async () => {
     mainWindow.loadFile('src/signup.html');
+});
+ipcMain.handle('navigate-to-welcome', async () => {
+    mainWindow.loadFile('src/welcome.html');
 });
 
 ipcMain.handle('navigate-to-forgot-password', async () => {

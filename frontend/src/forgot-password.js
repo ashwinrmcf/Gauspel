@@ -5,6 +5,13 @@ class ForgotPasswordApp {
     }
 
     initializeEventListeners() {
+        // Add to existing event listeners in each page
+        const backToWelcome = () => {
+            window.electronAPI.navigateToWelcome();
+        };
+
+    // Optional: Add a "Back to Welcome" button or link in your existing pages
+
         // Form submission
         const form = document.getElementById('forgotForm');
         form.addEventListener('submit', this.handlePasswordReset.bind(this));

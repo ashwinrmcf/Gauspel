@@ -229,7 +229,6 @@ document.addEventListener('DOMContentLoaded', () => {
     new SignupApp();
 });
 
-// Add CSS for input focus states
 const style = document.createElement('style');
 style.textContent = `
     .input-group.focused input {

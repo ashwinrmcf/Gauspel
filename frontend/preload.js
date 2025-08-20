@@ -6,7 +6,8 @@ contextBridge.exposeInMainWorld('electronAPI', {
     registerUser: (userData) => ipcRenderer.invoke('register-user', userData),
     resetPassword: (email) => ipcRenderer.invoke('reset-password', email),
 
-    // Navigation
+    // Navigation - ADD THIS LINE:
+    navigateToWelcome: () => ipcRenderer.invoke('navigate-to-welcome'),
     navigateToDashboard: () => ipcRenderer.invoke('navigate-to-dashboard'),
     navigateToLogin: () => ipcRenderer.invoke('navigate-to-login'),
     navigateToSignup: () => ipcRenderer.invoke('navigate-to-signup'),
@@ -15,3 +16,4 @@ contextBridge.exposeInMainWorld('electronAPI', {
     // System info
     platform: process.platform
 });
+
