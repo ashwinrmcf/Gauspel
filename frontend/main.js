@@ -59,6 +59,47 @@ app.on('window-all-closed', () => {
 });
 
 // IPC handlers
+// Add these IPC handlers to your existing main.js
+
+ipcMain.handle('navigate-to-signup', async () => {
+    mainWindow.loadFile('src/signup.html');
+});
+
+ipcMain.handle('navigate-to-forgot-password', async () => {
+    mainWindow.loadFile('src/forgot-password.html');
+});
+
+ipcMain.handle('register-user', async (event, userData) => {
+    // Simulate user registration (replace with real logic)
+    const { username, email, password } = userData;
+
+    // Simulate API call delay
+    await new Promise(resolve => setTimeout(resolve, 2000));
+
+    // Mock validation
+    if (username && email && password) {
+        return {
+            success: true,
+            user: {
+                name: username,
+                email: email
+            }
+        };
+    }
+
+    return { success: false, error: 'Registration failed' };
+});
+
+ipcMain.handle('reset-password', async (event, email) => {
+    // Simulate password reset (replace with real logic)
+    await new Promise(resolve => setTimeout(resolve, 1500));
+
+    if (email && email.includes('@')) {
+        return { success: true, message: 'Password reset link sent to your email' };
+    }
+
+    return { success: false, error: 'Invalid email address' };
+});
 ipcMain.handle('authenticate', async (event, credentials) => {
     // Simulate authentication (replace with real logic)
     const { username, password } = credentials;

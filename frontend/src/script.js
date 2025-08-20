@@ -163,6 +163,22 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector('.login-card').style.opacity = '1';
     }, 500);
 });
+// Add these event listeners to your existing LoginApp class constructor
+// Add after existing event listeners:
+
+// Signup link
+const signupLink = document.getElementById('signupLink');
+signupLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.electronAPI.navigateToSignup();
+});
+
+// Forgot password link
+const forgotPasswordLink = document.querySelector('.forgot-password');
+forgotPasswordLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.electronAPI.navigateToForgotPassword();
+});
 
 // Add CSS for input focus states
 const style = document.createElement('style');
