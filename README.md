@@ -1,5 +1,6 @@
 
-<img width="1024" height="1024" alt="asss" src="https://github.com/user-attachments/assets/6f80b76f-030c-483e-a08c-30bf3ac9147c" />
+<img width="600" alt="asss" src="https://github.com/user-attachments/assets/ddcfeca4-7f08-4864-9b46-37a51f8c18b5" />
+
 
 Gauspel - Advanced Fake News Tracker
 Gauspel is a cutting-edge application designed to empower users with reliable, real-time detection and tracking of misinformation across digital platforms. Our solution leverages state-of-the-art technologies and verified data sources to provide accurate assessments, helping individuals and organizations combat the spread of fake news effectively.
