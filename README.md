@@ -1,5 +1,6 @@
 
-<img width="600" alt="asss" src="https://github.com/user-attachments/assets/ddcfeca4-7f08-4864-9b46-37a51f8c18b5" />
+<img width="600" alt="asss" src="https://github.com/user-attachments/assets/07ddd59c-4cb6-4d20-8a46-a15b51bf2b47" />
+
 
 
 Gauspel - Advanced Fake News Tracker
