@@ -101,7 +101,7 @@ body {
 }
 
 .content-column:nth-child(3) .content-stream {
-    animation: scrollUp 450s linear infinite;
+    animation: scrollUp 415s linear infinite;
     animation-delay: 0s;
 }
 

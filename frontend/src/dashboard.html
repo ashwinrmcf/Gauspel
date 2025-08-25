@@ -3,23 +3,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - Desktop App</title>
+    <title>Gauspel AI - Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="dashboard.css">
 </head>
 <body>
-<div class="dashboard-container">
-    <div class="header">
-        <h1>Welcome to Dashboard</h1>
-        <button id="logoutBtn" class="logout-btn">Logout</button>
+    <!-- Background Elements -->
+    <div class="background-circles">
+        <div class="circle circle-1"></div>
+        <div class="circle circle-2"></div>
+        <div class="circle circle-3"></div>
     </div>
-    <div class="content">
-        <div class="card">
-            <h2>🎉 Login Successful!</h2>
-            <p>You have successfully logged into the desktop application.</p>
-            <p>This is where your main application content would go.</p>
+
+    <div class="dashboard-container">
+        <!-- Left Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-container">
+                    <img src="assets/icons/asss.png" alt="Gauspel Logo" class="logo">
+                    <h1 class="app-title">Gauspel</h1>
+                </div>
+                <button class="new-chat-btn" id="newChatBtn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    New Chat
+                </button>
+            </div>
+
+            <div class="chat-history">
+                <div class="history-empty">
+                    <div class="empty-icon">📋</div>
+                    <p class="empty-text">No verification history yet</p>
+                    <p class="empty-subtext">Your fact-checks will appear here</p>
+                </div>
+            </div>
+
+            <div class="sidebar-footer">
+                <div class="user-profile">
+                    <div class="user-avatar">
+                        <div class="avatar-placeholder">U</div>
+                    </div>
+                    <div class="user-info">
+                        <div class="user-name">User</div>
+                        <div class="user-plan">Free Plan</div>
+                    </div>
+                    <button class="profile-menu" id="profileMenu">⋯</button>
+                </div>
+                <button class="upgrade-btn">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                        <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" fill="currentColor"/>
+                    </svg>
+                    Upgrade to Pro
+                </button>
+            </div>
+        </div>
+
+        <!-- Main Chat Area -->
+        <div class="main-content">
+            <div class="chat-header">
+                <div class="header-actions">
+                    <button class="share-btn" title="Share">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <path d="M18 8C19.6569 8 21 6.65685 21 5C21 3.34315 19.6569 2 18 2C16.3431 2 15 3.34315 15 5C15 5.18875 15.0129 5.37498 15.0378 5.55671L9.88264 8.63397C9.37637 8.23205 8.72363 8 8 8C6.34315 8 5 9.34315 5 11C5 12.6569 6.34315 14 8 14C8.72363 14 9.37637 13.768 9.88264 13.366L15.0378 16.4433C15.0129 16.625 15 16.8113 15 17C15 18.6569 16.3431 20 18 20C19.6569 20 21 18.6569 21 17C21 15.3431 19.6569 14 18 14C17.2764 14 16.6236 14.232 16.1174 14.634L10.9622 11.5567C10.9871 11.375 11 11.1887 11 11C11 10.8113 10.9871 10.625 10.9622 10.4433L16.1174 7.36603C16.6236 7.76795 17.2764 8 18 8Z" fill="currentColor"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="truth-quotes">
+                    <div class="quote-container">
+                        <div class="quote-text" id="quoteText">"Truth is the first casualty of war, but it doesn't have to be."</div>
+                        <div class="quote-author">- Gauspel</div>
+                    </div>
+                    <button class="sync-quote-btn" id="syncQuoteBtn" title="New Quote">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                            <path d="M23 4v6h-6M1 20v-6h6M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 0 1 3.51 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="chat-messages" id="chatMessages">
+                <div class="welcome-screen">
+                    <div class="welcome-brand">
+                        <h1 class="brand-name">Gauspel</h1>
+                        <p class="brand-tagline">AI-Powered Fake News Detection</p>
+                    </div>
+                    <h2 class="welcome-title">Verify Information Authenticity</h2>
+                    <div class="suggestion-cards">
+                        <div class="suggestion-card">
+                            <div class="suggestion-icon">📰</div>
+                            <div class="suggestion-text">Check Article</div>
+                            <div class="suggestion-desc">Paste news URL or text</div>
+                        </div>
+                        <div class="suggestion-card">
+                            <div class="suggestion-icon">🖼️</div>
+                            <div class="suggestion-text">Verify Image</div>
+                            <div class="suggestion-desc">Upload suspicious images</div>
+                        </div>
+                        <div class="suggestion-card">
+                            <div class="suggestion-icon">🔍</div>
+                            <div class="suggestion-text">Fact Check</div>
+                            <div class="suggestion-desc">Analyze claims & sources</div>
+                        </div>
+                        <div class="suggestion-card">
+                            <div class="suggestion-icon">⚡</div>
+                            <div class="suggestion-text">Quick Scan</div>
+                            <div class="suggestion-desc">Instant credibility check</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="input-area">
+                <div class="input-container">
+                    <div class="input-left-actions">
+                        <button class="plus-btn" id="plusBtn">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                                <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                        <div class="plus-dropdown" id="plusDropdown">
+                            <div class="dropdown-option" id="selectFiles">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <polyline points="14,2 14,8 20,8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <span>Select from Files</span>
+                            </div>
+                            <div class="dropdown-option" id="takeScreenshot">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <circle cx="12" cy="13" r="4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <span>Take Screenshot</span>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="text" class="message-input" placeholder="Enter text, paste URL, or describe an image to verify..." id="messageInput">
+                    <div class="input-actions">
+                        <button class="send-btn" id="sendBtn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <path d="M22 2L15 22L11 13L2 9L22 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</div>
-<script src="dashboard.js"></script>
+
+    <script src="dashboard.js"></script>
+    <script src="quotes.js"></script>
+    <script src="dropdown.js"></script>
 </body>
 </html>

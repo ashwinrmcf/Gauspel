@@ -50,8 +50,9 @@ body {
     border-radius: 50%;
     box-shadow: 
         0 12px 48px rgba(0, 0, 0, 0.4),
-        0 6px 24px rgba(220, 38, 38, 0.3),
-        0 0 0 3px rgba(255, 255, 255, 0.15);
+        0 6px 24px rgba(147, 51, 234, 0.4),
+        0 0 0 3px rgba(147, 51, 234, 0.3),
+        0 0 30px rgba(147, 51, 234, 0.3);
     transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
     filter: drop-shadow(0 8px 40px rgba(0, 0, 0, 0.5));
     animation: welcomeLogoFloat 4s ease-in-out infinite;
@@ -61,9 +62,9 @@ body {
     transform: scale(1.05);
     box-shadow: 
         0 16px 60px rgba(0, 0, 0, 0.5),
-        0 8px 30px rgba(220, 38, 38, 0.4),
-        0 0 0 4px rgba(255, 255, 255, 0.2),
-        0 0 50px rgba(220, 38, 38, 0.4);
+        0 8px 30px rgba(147, 51, 234, 0.6),
+        0 0 0 4px rgba(147, 51, 234, 0.4),
+        0 0 50px rgba(147, 51, 234, 0.5);
 }
 
 @keyframes welcomeLogoFloat {
@@ -73,15 +74,15 @@ body {
     }
     25% {
         transform: translateY(-8px) rotate(2deg);
-        filter: drop-shadow(0 12px 50px rgba(220, 38, 38, 0.4)) brightness(1.1);
+        filter: drop-shadow(0 12px 50px rgba(147, 51, 234, 0.4)) brightness(1.1);
     }
     50% {
         transform: translateY(-12px) rotate(0deg);
-        filter: drop-shadow(0 16px 60px rgba(220, 38, 38, 0.5)) brightness(1.2);
+        filter: drop-shadow(0 16px 60px rgba(147, 51, 234, 0.5)) brightness(1.2);
     }
     75% {
         transform: translateY(-8px) rotate(-2deg);
-        filter: drop-shadow(0 12px 50px rgba(220, 38, 38, 0.4)) brightness(1.1);
+        filter: drop-shadow(0 12px 50px rgba(147, 51, 234, 0.4)) brightness(1.1);
     }
 }
 
@@ -124,7 +125,7 @@ body {
 
 /* Login Section */
 .login-section {
-    flex: 0 0 420px;
+    flex: 0 0 720px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -140,9 +141,9 @@ body {
     backdrop-filter: blur(20px);
     border-radius: 20px;
     border: 2px solid rgba(147, 51, 234, 0.6);
-    padding: 40px;
+    padding: 70px;
     width: 100%;
-    max-width: 400px;
+    max-width: 680px;
     box-shadow: 
         0 20px 40px rgba(0, 0, 0, 0.8),
         inset 0 1px 0 rgba(147, 51, 234, 0.2),
@@ -161,14 +162,14 @@ body {
 
 
 .login-header h2 {
-    font-size: 2rem;
-    margin-bottom: 8px;
+    font-size: 2.5rem;
+    margin-bottom: 12px;
     font-weight: 600;
 }
 
 .login-header p {
     color: #b0b0b0;
-    font-size: 0.95rem;
+    font-size: 1.1rem;
 }
 
 /* Form Styling */
@@ -179,12 +180,12 @@ body {
 
 .input-group input {
     width: 100%;
-    padding: 15px;
+    padding: 18px;
     background: rgba(0, 0, 0, 0.5);
     border: 2px solid rgba(147, 51, 234, 0.4);
     border-radius: 8px;
     color: rgba(245, 245, 220, 0.95);
-    font-size: 16px;
+    font-size: 18px;
     font-family: 'Cinzel', serif;
     transition: all 0.3s ease;
 }
@@ -239,14 +240,14 @@ body {
     background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(25, 25, 25, 0.9) 100%);
     color: rgba(245, 245, 220, 0.95);
     border: 2px solid rgba(147, 51, 234, 0.6);
-    padding: 15px;
+    padding: 18px;
     border-radius: 8px;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 600;
     font-family: 'Cinzel', serif;
     cursor: pointer;
     transition: all 0.3s ease;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     position: relative;
     overflow: hidden;
 }
@@ -332,6 +333,13 @@ body {
     height: 20px;
 }
 
+.login-link {
+    text-align: center;
+    margin-bottom: 20px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 16px;
+}
+
 .signup-link {
     text-align: center;
     margin-bottom: 20px;
@@ -353,7 +361,7 @@ body {
 .footer-links {
     display: flex;
     justify-content: space-between;
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .footer-links a {
@@ -381,7 +389,7 @@ body {
 .circle {
     position: absolute;
     border-radius: 50%;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(50, 50, 50, 0.3) 100%);
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(147, 51, 234, 0.2) 100%);
     animation: float 6s ease-in-out infinite;
 }
 
